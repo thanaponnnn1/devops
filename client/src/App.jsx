@@ -5,6 +5,7 @@ import TaskList from './components/TaskList';
 import AddTaskDialog from './components/AddTaskDialog';
 import LoadingSpinner from './components/LoadingSpinner';
 import { taskService } from './services/taskService';
+import heroImage from './assets/256c10d0-9ad0-4afa-b41f-1cf6e5ce7fce.jpg';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -12,7 +13,6 @@ function App() {
   const [error, setError] = useState(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  // Fetch tasks on component mount
   useEffect(() => {
     fetchTasks();
   }, []);
@@ -60,11 +60,8 @@ function App() {
     fetchTasks();
   };
 
-  // let sangam = 'unused variable here';
-
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-4xl mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
@@ -82,8 +79,15 @@ function App() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 py-8">
+        <div className="mb-8">
+          <img
+            src={heroImage}
+            alt="Task Manager"
+            className="w-full max-h-96 object-cover rounded-xl shadow-md"
+          />
+        </div>
+
         {loading ? (
           <LoadingSpinner />
         ) : error ? (
@@ -119,7 +123,6 @@ function App() {
         )}
       </main>
 
-      {/* Add Task Dialog */}
       {isDialogOpen && (
         <AddTaskDialog onClose={() => setIsDialogOpen(false)} onSubmit={handleAddTask} />
       )}
