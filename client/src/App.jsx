@@ -5,7 +5,7 @@ import TaskList from './components/TaskList';
 import AddTaskDialog from './components/AddTaskDialog';
 import LoadingSpinner from './components/LoadingSpinner';
 import { taskService } from './services/taskService';
-import heroImage from './assets/256c10d0-9ad0-4afa-b41f-1cf6e5ce7fce.jpg';
+
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -80,13 +80,6 @@ function App() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-8">
-        <div className="mb-8">
-          <img
-            src={heroImage}
-            alt="Task Manager"
-            className="w-full max-h-96 object-cover rounded-xl shadow-md"
-          />
-        </div>
 
         {loading ? (
           <LoadingSpinner />
