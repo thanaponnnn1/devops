@@ -67,7 +67,7 @@ function App() {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Task Manager Edited</h1>
-              <p className="text-gray-600 mt-1">Simple task management for DevOps demo</p>
+              <p className="text-gray-600 mt-1">Simple task management for DevOps demo thannapon</p>
             </div>
             <button
               onClick={() => setIsDialogOpen(true)}
